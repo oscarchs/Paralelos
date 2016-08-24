@@ -57,7 +57,7 @@ void print_matrix(int **a,int a_rows,int a_cols){
 
 int main(){
 
-	int row=2000,column=2000;
+	int row=100,column=100;
 	srand(time(NULL));
 	int **a = new int*[row];
 	for(int i=0; i < row; i++) {a[i] = new int[column];};
@@ -77,7 +77,7 @@ int main(){
     t1 = clock();
     
 	//int ** m = matrix_product(a,b,row,row,column,column);
-	int ** m = matrix_product2(a,b,row,100);			   
+	int ** m = matrix_product2(a,b,row,10);			   
   
     t2 = clock();
     float diff1 = ((float)t2-(float)t1);
