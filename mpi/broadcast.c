@@ -10,7 +10,6 @@ void my_bcast(void* data, int count, MPI_Datatype datatype, int root,
   MPI_Comm_size(communicator, &world_size);
 
   if (rank == root) {
-    // If we are the root process, send our data to everyone
     int i;
     for (i = 0; i < world_size; i++) {
       if (i != rank) {
@@ -18,7 +17,6 @@ void my_bcast(void* data, int count, MPI_Datatype datatype, int root,
       }
     }
   } else {
-    // If we are a receiver process, receive the data from the root
     MPI_Recv(data, count, datatype, root, 0, communicator, MPI_STATUS_IGNORE);
   }
 }

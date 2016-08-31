@@ -4,7 +4,7 @@
 
 int rank;
 int size;
-const int limit = 5;
+const int limit = 10;
 
 int main(int argc, char** argv) {
 
@@ -16,7 +16,6 @@ int main(int argc, char** argv) {
 	int adversary = (rank + 1) % 2;
 	while (count < limit) {
     if (rank == count % 2) {
-        // Increment the ping pong count before you send it
         count++;
         MPI_Send(&count, 1, MPI_INT, adversary, 0,
                  MPI_COMM_WORLD);
