@@ -1,5 +1,5 @@
 #include <iostream>
-#include <algorithm> 
+#include <algorithm>
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>
 using namespace std;
@@ -25,7 +25,6 @@ int ** matrix_product2(int **a,int **b,int n,int blockSize){
 	for(int i=0; i < n; i++){
 		pr[i] = new int[n];
 	}
-
     for (int ii = 0; ii<n; ii+=blockSize) {
         for (int jj = 0; jj<n; jj+=blockSize) {
             for (int kk = 0; kk<n; kk+=blockSize) {
@@ -72,19 +71,19 @@ int main(){
 		for(int j=0; j < column; j++)
 			b[i][j] = rand() % 1000;
 	}
-	
+
 	clock_t t1,t2;
     t1 = clock();
-    
-	//int ** m = matrix_product(a,b,row,row,column,column);
-	int ** m = matrix_product2(a,b,row,10);			   
-  
+
+	int ** m = matrix_product(a,b,row,row,column,column);
+	//int ** m = matrix_product2(a,b,row,10);
+
     t2 = clock();
     float diff1 = ((float)t2-(float)t1);
     cout << (float)diff1/CLOCKS_PER_SEC<<endl;
-	
+
 
 	//print_matrix(b,row,column);
-	
+
 	return 0;
 }
