@@ -1,6 +1,8 @@
 #include <iostream>
 #include <time.h>
 using namespace std;
+
+
 #define MAX 10000
 double A[MAX][MAX], X[MAX], y[MAX];
 
